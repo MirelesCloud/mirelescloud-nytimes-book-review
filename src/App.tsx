@@ -12,8 +12,6 @@ const App: React.FC = () => {
     status: 'loading'
   })
 
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
   useEffect(() => {
     fetch(`https://api.nytimes.com/svc/books/v3/lists/2019-01-20/hardcover-fiction.json?api-key=${API_KEY}`)
       .then(response => response.json())
@@ -34,10 +32,8 @@ const App: React.FC = () => {
             <ContentWrapper>
               {result.status === 'loaded' && result.payload.results.books.map(idx => (
               <ImageContainer key={idx.rank}>
-                <Image src={idx.book_image} alt={idx.title} onClick={() => setIsModalOpen(true)}/>
-                
+                <Books rank={idx.rank} title={idx.title} author={idx.author} book_image={idx.book_image}/>
               </ImageContainer>
-              
             ))}
             </ContentWrapper>
           </ModalProvider>
@@ -51,8 +47,8 @@ const Books: React.FC<IBooks> = ({rank, title, author, book_image}) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   return (
     <>
-      <Image src={book_image} alt={title}/>
-      {isModalOpen && <Modal>
+      <Image src={book_image} alt={title} onClick={() => setIsModalOpen(true)}/>
+      {isModalOpen && <Modal onClose={() => setIsModalOpen(false)}>
           <ModalWrapper>
             <ModalContent>
               <h1>title</h1>
