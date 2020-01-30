@@ -1,4 +1,4 @@
-import React, { Fragment,  useState, useEffect } from 'react';
+import React, { Fragment,  useState, useEffect, useMemo } from 'react';
 import {Service, ICategory, IBooks} from './Types'
 import { GlobalStyle, Nav, NavHeader, NavLeft, NavCenter, NavRight, MainContainer, ContentWrapper, Container, ImageContainer, Image, ModalWrapper, ModalContent, ModalHeader, ModalSubHeader, ModalText, Line, Select } from './Styles'
 import { Modal, ModalProvider } from './Modal'
@@ -12,11 +12,14 @@ const App: React.FC = () => {
     status: 'loading'
   })
   const [book, setBooks] = useState<string>("nonfiction")
-  const [select, setSelect] = useState<string>("nonfiction")
-  console.log(book)
+  const [select] = useState([
+    {label: "Fiction", value: "fiction"},
+    {label: "Non-Fiction", value: "nonfiction"}
+  ])
+  console.log(select)
 
-  useEffect(() => {
-    fetch(`https://api.nytimes.com/svc/books/v3/lists/2019-01-20/hardcover-${select}.json?api-key=${API_KEY}`)
+  useMemo(() => {
+    fetch(`https://api.nytimes.com/svc/books/v3/lists/2019-01-20/hardcover-${book}.json?api-key=${API_KEY}`)
       .then(response => response.json())
       .then(response => {
         setResult({ status: 'loaded', payload: response})
@@ -24,7 +27,9 @@ const App: React.FC = () => {
       })
       .catch(error => setResult({ status: 'error', error}))
 
-  }, [])
+  }, [book])
+
+
 
   return (
     <Fragment>
@@ -38,6 +43,11 @@ const App: React.FC = () => {
       </Nav>
       <MainContainer>
         <Container>
+          <select>
+            {select.map(item => (
+              <option key={item.value} value={item.value}>{item.label}</option>
+            ))}
+          </select>
           <Select value={book} onChange={( e: React.ChangeEvent<HTMLSelectElement>, ): void => setBooks(e.target.value)} >
             
             <option value="nonfiction">Non-Fiction</option>
@@ -71,7 +81,7 @@ const Books: React.FC<IBooks> = ({rank, title, author, book_image, description, 
               <ModalSubHeader>By {author}</ModalSubHeader>
               <ModalSubHeader>NY Times Rank {rank}</ModalSubHeader>
               <ModalText>{description}</ModalText>
-              <ModalText><a href={book_review_link} target="_blank" >Review</a></ModalText>
+              <ModalText><a href={book_review_link} target="_blank" rel="noopener noreferrer" >Review</a></ModalText>
               <Line/>
             </ModalContent>
           </ModalWrapper>
