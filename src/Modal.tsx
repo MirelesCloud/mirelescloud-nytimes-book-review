@@ -23,7 +23,6 @@ export function ModalProvider({children}: any) {
 
 export function Modal({onClose, children, ...props }: any) {
   const modalNode = useContext(Context);
-  console.log(children)
 
   return  modalNode
     ? ReactDOM.createPortal(
@@ -34,7 +33,6 @@ export function Modal({onClose, children, ...props }: any) {
         </Dialog>
       </Overlay>,
       modalNode
-      
     )
     : null; 
 }

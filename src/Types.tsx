@@ -35,5 +35,7 @@ export interface ServiceInit {
     rank: number;
     title: string;
     author: string;
+    description: string;
     book_image: string;
+    book_review_link: string;
   }

@@ -16,6 +16,50 @@ export const GlobalStyle = createGlobalStyle`
       monospace;
   }
 `
+/* Header */
+export const Nav = styled.div`
+    background-color: #f7f7f5;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
+`
+
+export const NavHeader = styled.div`
+    max-width: 1010px;
+    padding: 26px 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+`
+
+export const NavLeft = styled.div`
+    width: 33.333%;
+    text-align: left;
+    font-size: 2em;
+    font-weight: 300;
+
+    @media (max-width: 378px) {
+        font-size: 1.5em;
+      }
+`
+
+export const NavCenter = styled.div`
+    wdith; 33.333%;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 300;
+    @media (max-width: 378px) {
+        font-size: 1.5em;
+      }
+`
+
+export const NavRight = styled.div`
+    width: 33.333%;
+    text-align: right;
+    font-size: 30px;
+    font-weight: 300;
+`
+
+/* Body */
 
 export const MainContainer = styled.div`
   max-width: 1010px;
@@ -91,6 +135,33 @@ export const InfoText = styled.p`
 
 `
 
+/* Dropdown */
+export const DropdownContent = styled.div`
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+`
+export const Dropdown = styled.div`
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  &:hover ${DropdownContent} {
+    display: block;
+  }
+`
+
+export const Select = styled.select`
+  width: 200px;
+  font-size: 1rem;
+`
+
+
+
 /* Modal */
 export const Overlay = styled.div`
   position: fixed;
@@ -129,3 +200,16 @@ export const ModalContent = styled.div`
   cursor: pointer;
   transition: 0.3s all ease-in;
   `
+
+export const ModalHeader = styled.h3``
+
+export const ModalSubHeader = styled.h4``
+
+export const ModalText = styled.p`
+  padding: 0px;
+  margin: 3px;
+`
+export const Line = styled.hr`
+  color: rgba(0, 0, 0, 0.7);
+  
+`
