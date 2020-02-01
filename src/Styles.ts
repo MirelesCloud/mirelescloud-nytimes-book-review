@@ -181,11 +181,13 @@ export const Dialog = styled.div`
   left 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  
 `
 
 export const ModalContainer = styled.div`
   position: relative;
   z-index: 0;
+  
 `
 
 export const ModalWrapper = styled.div`
