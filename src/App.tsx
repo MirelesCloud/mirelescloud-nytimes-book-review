@@ -34,12 +34,10 @@ const App: React.FC = () => {
     status: 'loading'
   })
   const [book, setBooks] = useState<string>("hardcover-nonfiction")
-  let today = new Date();
-  console.log(today)
-  let date = today.getFullYear()+'-'+('0'+(today.getMonth()+1)).slice(-2)+'-'+("0"+today.getDate()).slice(-2)
-  console.log(date)
-  
 
+  let today = new Date();
+  let date = today.getFullYear()+'-'+('0'+(today.getMonth()+1)).slice(-2)+'-'+("0"+today.getDate()).slice(-2)
+  
   useMemo(() => {
     fetch(`https://api.nytimes.com/svc/books/v3/lists/${date}/${book}.json?api-key=${API_KEY}`)
       .then(response => response.json())
@@ -49,7 +47,7 @@ const App: React.FC = () => {
       })
       .catch(error => setResult({ status: 'error', error}))
 
-  }, [book])
+  }, [book, date])
 
  
 
@@ -67,9 +65,16 @@ const App: React.FC = () => {
         <Container>
           <Select value={book} onChange={( e: React.ChangeEvent<HTMLSelectElement>, ): void => setBooks(e.target.value)} >
             <option value="hardcover-nonfiction">Non-Fiction</option>
-            <option value="hardcover-fiction">Fiction</option>
-            <option value="paperback-nonfiction">Non-Fiction (PB)</option>
+            <option value="combined-print-and-e-book-nonfiction">Combined Print and E-Book Non-Fiction</option>
+            <option value="paperback-nonfiction">Paperback Non-Fiction</option>
+            <option value="advice-how-to-and-miscellaneous">Advice, How-to & Misc.</option>
           </Select>
+          <Select value={book} onChange={( e: React.ChangeEvent<HTMLSelectElement>, ): void => setBooks(e.target.value)}>
+            <option value="hardcover-fiction">Fiction</option>
+            <option value="combined-print-and-e-book-fiction">Combined Print and E-Book Fiction</option>
+            <option value="trade-fiction-paperback">Paperback Trade Fiction</option>
+          </Select >
+          
           <ModalProvider>
             <ContentWrapper>
               {result.status === 'loaded' && result.payload.results.books.map(idx => (

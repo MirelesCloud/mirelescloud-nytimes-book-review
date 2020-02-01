@@ -156,8 +156,9 @@ export const Dropdown = styled.div`
 `
 
 export const Select = styled.select`
-  width: 200px;
+  width: 300px;
   font-size: 1rem;
+  margin-right: 20px;
 `
 
 
