@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "mirelescloud.github.io/mirelescloud-nytimes-book-review/static/css/main.d1b05096.chunk.css",
-    "main.js": "mirelescloud.github.io/mirelescloud-nytimes-book-review/static/js/main.ff101ab5.chunk.js",
-    "main.js.map": "mirelescloud.github.io/mirelescloud-nytimes-book-review/static/js/main.ff101ab5.chunk.js.map",
-    "runtime-main.js": "mirelescloud.github.io/mirelescloud-nytimes-book-review/static/js/runtime-main.754c3a41.js",
-    "runtime-main.js.map": "mirelescloud.github.io/mirelescloud-nytimes-book-review/static/js/runtime-main.754c3a41.js.map",
-    "static/js/2.39701a38.chunk.js": "mirelescloud.github.io/mirelescloud-nytimes-book-review/static/js/2.39701a38.chunk.js",
-    "static/js/2.39701a38.chunk.js.map": "mirelescloud.github.io/mirelescloud-nytimes-book-review/static/js/2.39701a38.chunk.js.map",
-    "index.html": "mirelescloud.github.io/mirelescloud-nytimes-book-review/index.html",
-    "precache-manifest.893d463f0ebbfa2a09e895cf764b2f40.js": "mirelescloud.github.io/mirelescloud-nytimes-book-review/precache-manifest.893d463f0ebbfa2a09e895cf764b2f40.js",
-    "service-worker.js": "mirelescloud.github.io/mirelescloud-nytimes-book-review/service-worker.js",
-    "static/css/main.d1b05096.chunk.css.map": "mirelescloud.github.io/mirelescloud-nytimes-book-review/static/css/main.d1b05096.chunk.css.map",
-    "static/js/2.39701a38.chunk.js.LICENSE": "mirelescloud.github.io/mirelescloud-nytimes-book-review/static/js/2.39701a38.chunk.js.LICENSE"
+    "main.css": "/mirelescloud-nytimes-book-review/static/css/main.d1b05096.chunk.css",
+    "main.js": "/mirelescloud-nytimes-book-review/static/js/main.1c354f56.chunk.js",
+    "main.js.map": "/mirelescloud-nytimes-book-review/static/js/main.1c354f56.chunk.js.map",
+    "runtime-main.js": "/mirelescloud-nytimes-book-review/static/js/runtime-main.67ae9726.js",
+    "runtime-main.js.map": "/mirelescloud-nytimes-book-review/static/js/runtime-main.67ae9726.js.map",
+    "static/js/2.362b2b13.chunk.js": "/mirelescloud-nytimes-book-review/static/js/2.362b2b13.chunk.js",
+    "static/js/2.362b2b13.chunk.js.map": "/mirelescloud-nytimes-book-review/static/js/2.362b2b13.chunk.js.map",
+    "index.html": "/mirelescloud-nytimes-book-review/index.html",
+    "precache-manifest.06c52126dc40a64013481e6da042903d.js": "/mirelescloud-nytimes-book-review/precache-manifest.06c52126dc40a64013481e6da042903d.js",
+    "service-worker.js": "/mirelescloud-nytimes-book-review/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/mirelescloud-nytimes-book-review/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.362b2b13.chunk.js.LICENSE": "/mirelescloud-nytimes-book-review/static/js/2.362b2b13.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.754c3a41.js",
-    "static/js/2.39701a38.chunk.js",
+    "static/js/runtime-main.67ae9726.js",
+    "static/js/2.362b2b13.chunk.js",
     "static/css/main.d1b05096.chunk.css",
-    "static/js/main.ff101ab5.chunk.js"
+    "static/js/main.1c354f56.chunk.js"
   ]
 }
