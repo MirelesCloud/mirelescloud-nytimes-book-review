@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f669ffe2847837ff70113374603c4b40",
+    "revision": "cadfa05d321de2cd249151da035fbb96",
     "url": "/mirelescloud-nytimes-book-review/index.html"
   },
   {
-    "revision": "de8a8fa2d84f26fd1c17",
+    "revision": "605027ab7d46461635dc",
     "url": "/mirelescloud-nytimes-book-review/static/css/main.d1b05096.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mirelescloud-nytimes-book-review/static/js/2.362b2b13.chunk.js.LICENSE"
   },
   {
-    "revision": "de8a8fa2d84f26fd1c17",
-    "url": "/mirelescloud-nytimes-book-review/static/js/main.c385a27a.chunk.js"
+    "revision": "605027ab7d46461635dc",
+    "url": "/mirelescloud-nytimes-book-review/static/js/main.d7f7b8e2.chunk.js"
   },
   {
     "revision": "ef5848ff7595a3a37f9f",

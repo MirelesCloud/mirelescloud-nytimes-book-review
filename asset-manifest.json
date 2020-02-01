@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/mirelescloud-nytimes-book-review/static/css/main.d1b05096.chunk.css",
-    "main.js": "/mirelescloud-nytimes-book-review/static/js/main.c385a27a.chunk.js",
-    "main.js.map": "/mirelescloud-nytimes-book-review/static/js/main.c385a27a.chunk.js.map",
+    "main.js": "/mirelescloud-nytimes-book-review/static/js/main.d7f7b8e2.chunk.js",
+    "main.js.map": "/mirelescloud-nytimes-book-review/static/js/main.d7f7b8e2.chunk.js.map",
     "runtime-main.js": "/mirelescloud-nytimes-book-review/static/js/runtime-main.67ae9726.js",
     "runtime-main.js.map": "/mirelescloud-nytimes-book-review/static/js/runtime-main.67ae9726.js.map",
     "static/js/2.362b2b13.chunk.js": "/mirelescloud-nytimes-book-review/static/js/2.362b2b13.chunk.js",
     "static/js/2.362b2b13.chunk.js.map": "/mirelescloud-nytimes-book-review/static/js/2.362b2b13.chunk.js.map",
     "index.html": "/mirelescloud-nytimes-book-review/index.html",
-    "precache-manifest.1928a6fcad790637b4e934c6f32fe153.js": "/mirelescloud-nytimes-book-review/precache-manifest.1928a6fcad790637b4e934c6f32fe153.js",
+    "precache-manifest.7f535c666542a103a6758dab50ed0139.js": "/mirelescloud-nytimes-book-review/precache-manifest.7f535c666542a103a6758dab50ed0139.js",
     "service-worker.js": "/mirelescloud-nytimes-book-review/service-worker.js",
     "static/css/main.d1b05096.chunk.css.map": "/mirelescloud-nytimes-book-review/static/css/main.d1b05096.chunk.css.map",
     "static/js/2.362b2b13.chunk.js.LICENSE": "/mirelescloud-nytimes-book-review/static/js/2.362b2b13.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.67ae9726.js",
     "static/js/2.362b2b13.chunk.js",
     "static/css/main.d1b05096.chunk.css",
-    "static/js/main.c385a27a.chunk.js"
+    "static/js/main.d7f7b8e2.chunk.js"
   ]
 }
