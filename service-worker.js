@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/mirelescloud-nytimes-book-review/precache-manifest.06c52126dc40a64013481e6da042903d.js"
+  "/mirelescloud-nytimes-book-review/precache-manifest.1928a6fcad790637b4e934c6f32fe153.js"
 );
 
 self.addEventListener('message', (event) => {
