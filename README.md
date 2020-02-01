@@ -1,3 +1,7 @@
+# About
+
+NY Times Book Bestseller API App.  React.js using hooks, typescript and styled-components 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

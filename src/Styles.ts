@@ -226,8 +226,11 @@ export const ModalText = styled.p`
 export const CloseModal = styled.p`
   &:after {
     content: 'x';
-    text-align: right;
+    position: relative;
+    left: 500px;
     cursor: pointer;
+    font-weight: 900;
+    
 
   }
   

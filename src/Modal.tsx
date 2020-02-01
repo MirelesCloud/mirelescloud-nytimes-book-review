@@ -30,7 +30,6 @@ export function Modal({onClose, children, ...props }: any) {
         <Dialog {...props}>
           <CloseModal onClick={onClose}/>
           {children}
-          <button onClick={onClose}>Close</button>
         </Dialog>
       </Overlay>,
       modalNode
