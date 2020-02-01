@@ -1,6 +1,28 @@
 import React, { Fragment,  useState, useEffect, useMemo } from 'react';
 import {Service, ICategory, IBooks} from './Types'
-import { GlobalStyle, Nav, NavHeader, NavLeft, NavCenter, NavRight, MainContainer, ContentWrapper, Container, ImageContainer, Image, ModalWrapper, ModalContent, ModalHeader, ModalSubHeader, ModalText, Line, Select } from './Styles'
+import { 
+  GlobalStyle, 
+  Nav, 
+  NavHeader, 
+  NavLeft, 
+  NavCenter, 
+  NavRight, 
+  MainContainer, 
+  ContentWrapper, 
+  Container, 
+  ImageContainer, 
+  Image, 
+  ModalWrapper,
+  ModalContainer, 
+  ModalContent, 
+  ModalHeader, 
+  ModalSubHeader, 
+  ModalText,
+  Row,
+  Column,
+  Line, 
+  Select,
+  } from './Styles'
 import { Modal, ModalProvider } from './Modal'
 
 import './App.css';
@@ -12,11 +34,7 @@ const App: React.FC = () => {
     status: 'loading'
   })
   const [book, setBooks] = useState<string>("nonfiction")
-  const [select] = useState([
-    {label: "Fiction", value: "fiction"},
-    {label: "Non-Fiction", value: "nonfiction"}
-  ])
-  console.log(select)
+  
 
   useMemo(() => {
     fetch(`https://api.nytimes.com/svc/books/v3/lists/2019-01-20/hardcover-${book}.json?api-key=${API_KEY}`)
@@ -28,8 +46,6 @@ const App: React.FC = () => {
       .catch(error => setResult({ status: 'error', error}))
 
   }, [book])
-
-
 
   return (
     <Fragment>
@@ -43,13 +59,7 @@ const App: React.FC = () => {
       </Nav>
       <MainContainer>
         <Container>
-          <select>
-            {select.map(item => (
-              <option key={item.value} value={item.value}>{item.label}</option>
-            ))}
-          </select>
           <Select value={book} onChange={( e: React.ChangeEvent<HTMLSelectElement>, ): void => setBooks(e.target.value)} >
-            
             <option value="nonfiction">Non-Fiction</option>
             <option value="fiction">Fiction</option>
           </Select>
@@ -75,15 +85,29 @@ const Books: React.FC<IBooks> = ({rank, title, author, book_image, description, 
       <Image src={book_image} alt={title} onClick={() => setIsModalOpen(true)}/>
       {isModalOpen && <Modal onClose={() => setIsModalOpen(false)}>
           <ModalWrapper>
-            <ModalContent>
-              <Image src={book_image} alt={title}/>
-              <ModalHeader>{title}</ModalHeader>
-              <ModalSubHeader>By {author}</ModalSubHeader>
-              <ModalSubHeader>NY Times Rank {rank}</ModalSubHeader>
-              <ModalText>{description}</ModalText>
-              <ModalText><a href={book_review_link} target="_blank" rel="noopener noreferrer" >Review</a></ModalText>
+            <ModalContainer>
+              <Row>
+                <Column>
+                  <ModalContent>
+                    <Image src={book_image} alt={title}/>
+                  </ModalContent>
+                </Column>
+                <Column>
+                  <ModalContent>
+                    <ModalHeader>{title}</ModalHeader>
+                    <ModalSubHeader>By {author}</ModalSubHeader>
+                    <ModalSubHeader>NY Times Rank No. {rank}</ModalSubHeader>
+                    <ModalText>{description}</ModalText>
+                    <ModalText><a href={book_review_link} target="_blank" rel="noopener noreferrer" >Review</a></ModalText>
+
+                  </ModalContent>
+                 
+                </Column>
+              </Row>
+             
+              
               <Line/>
-            </ModalContent>
+            </ModalContainer>
           </ModalWrapper>
         </Modal>}
     </>

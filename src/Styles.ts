@@ -199,7 +199,21 @@ export const ModalContent = styled.div`
   margin: 10px;
   cursor: pointer;
   transition: 0.3s all ease-in;
-  `
+`
+
+
+export const Column = styled.div`
+  float: left;
+  width: 50%;
+`
+
+export const Row = styled.div`
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+`
 
 export const ModalHeader = styled.h3``
 
@@ -208,6 +222,15 @@ export const ModalSubHeader = styled.h4``
 export const ModalText = styled.p`
   padding: 0px;
   margin: 3px;
+`
+export const CloseModal = styled.p`
+  &:after {
+    content: 'x';
+    text-align: right;
+    cursor: pointer;
+
+  }
+  
 `
 export const Line = styled.hr`
   color: rgba(0, 0, 0, 0.7);
