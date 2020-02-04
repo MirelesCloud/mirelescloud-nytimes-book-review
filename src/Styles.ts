@@ -4,6 +4,8 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    height: 100%;
+    position: relative;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
       sans-serif;
@@ -16,6 +18,15 @@ export const GlobalStyle = createGlobalStyle`
       monospace;
   }
 `
+
+export const PageContainer = styled.div`
+  overlfow: hidden;
+  display: block;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 2rem;
+`
+
 /* Header */
 export const Nav = styled.div`
     background-color: #f7f7f5;
@@ -45,7 +56,7 @@ export const NavLeft = styled.div`
 export const NavCenter = styled.div`
     wdith; 33.333%;
     text-align: center;
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: 300;
     @media (max-width: 378px) {
         font-size: 1.5em;
@@ -55,12 +66,11 @@ export const NavCenter = styled.div`
 export const NavRight = styled.div`
     width: 33.333%;
     text-align: right;
-    font-size: 30px;
+    font-size: 2rem;
     font-weight: 300;
 `
 
 /* Body */
-
 export const MainContainer = styled.div`
   max-width: 1010px;
   width: 100%;
@@ -71,11 +81,6 @@ export const ContentWrapper = styled.div`
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
-`
-export const Container = styled.div`
-  max-width: 1010px;
-  width: 100%;
-  margin: 20px, auto;
 `
 
 export const ImageContainer = styled.div`
@@ -127,7 +132,10 @@ export const InfoDetailsRight = styled.div`
   flex-direction: column;
 `
 
-export const InfoHeader = styled.h6``;
+export const InfoHeader = styled.div`
+  font-size: 1.5rem;
+  font-weight: 300;
+`;
 
 export const InfoText = styled.p`
   padding: 0px;
@@ -136,32 +144,16 @@ export const InfoText = styled.p`
 `
 
 /* Dropdown */
-export const DropdownContent = styled.div`
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
-`
-export const Dropdown = styled.div`
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-
-  &:hover ${DropdownContent} {
-    display: block;
-  }
-`
-
 export const Select = styled.select`
   width: 300px;
   font-size: 1rem;
-  margin-right: 20px;
+  margin: 5px;
+
+  @media(max-width: 700px) {
+    border: 1px solid rgba(0,0,0,0.5);
+  }
+  
 `
-
-
 
 /* Modal */
 export const Overlay = styled.div`
@@ -208,6 +200,10 @@ export const ModalContent = styled.div`
 export const Column = styled.div`
   float: left;
   width: 50%;
+
+  @media(max-width: 378px) {
+    width: 100%;
+  }
 `
 
 export const Row = styled.div`
@@ -230,15 +226,20 @@ export const CloseModal = styled.p`
   &:after {
     content: 'x';
     position: relative;
-    left: 500px;
+    float: right;
     cursor: pointer;
-    font-weight: 900;
-    
-
+    font-weight: 500;
   }
-  
 `
+
 export const Line = styled.hr`
   color: rgba(0, 0, 0, 0.7);
-  
+`
+
+/*Footer */
+export const Footer = styled.footer`
+  position: absolute;
+  bottom: 0;
+  width: 100%
+  background: #212121;
 `

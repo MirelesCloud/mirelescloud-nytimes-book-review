@@ -1,5 +1,5 @@
 import React, { useRef, useContext, useState, useEffect } from 'react'
-import { Overlay, Dialog, Container, CloseModal  } from './Styles'
+import { Overlay, Dialog, CloseModal  } from './Styles'
 import ReactDOM from 'react-dom';
 
 const Context = React.createContext(null);
@@ -14,10 +14,10 @@ export function ModalProvider({children}: any) {
   }, []);
 
   return (
-    <Container>
+    <div>
       <Context.Provider value={context}>{children}</Context.Provider>
       <div ref={modalRef} />
-    </Container>
+    </div>
   )
 }
 

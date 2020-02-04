@@ -1,7 +1,8 @@
 import React, { Fragment,  useState, useEffect, useMemo } from 'react';
 import {Service, ICategory, IBooks} from './Types'
 import { 
-  GlobalStyle, 
+  GlobalStyle,
+  PageContainer,
   Nav, 
   NavHeader, 
   NavLeft, 
@@ -9,9 +10,8 @@ import {
   NavRight, 
   MainContainer, 
   ContentWrapper, 
-  Container, 
   ImageContainer, 
-  Image, 
+  Image,
   ModalWrapper,
   ModalContainer, 
   ModalContent, 
@@ -22,6 +22,7 @@ import {
   Column,
   Line, 
   Select,
+  Footer,
   } from './Styles'
 import { Modal, ModalProvider } from './Modal'
 
@@ -46,46 +47,49 @@ const App: React.FC = () => {
         console.log(response)
       })
       .catch(error => setResult({ status: 'error', error}))
-
   }, [book, date])
-
- 
 
   return (
     <Fragment>
       <GlobalStyle/>
-      <Nav>
-        <NavHeader>
-          <NavLeft>MirelesCloud</NavLeft>
-          <NavCenter></NavCenter>
-          <NavRight>NY Times Bestsellers</NavRight>
-        </NavHeader>
-      </Nav>
-      <MainContainer>
-        <Container>
-          <Select value={book} onChange={( e: React.ChangeEvent<HTMLSelectElement>, ): void => setBooks(e.target.value)} >
-            <option value="hardcover-nonfiction">Non-Fiction</option>
-            <option value="combined-print-and-e-book-nonfiction">Combined Print and E-Book Non-Fiction</option>
-            <option value="paperback-nonfiction">Paperback Non-Fiction</option>
-            <option value="advice-how-to-and-miscellaneous">Advice, How-to & Misc.</option>
-          </Select>
-          <Select value={book} onChange={( e: React.ChangeEvent<HTMLSelectElement>, ): void => setBooks(e.target.value)}>
-            <option value="hardcover-fiction">Fiction</option>
-            <option value="combined-print-and-e-book-fiction">Combined Print and E-Book Fiction</option>
-            <option value="trade-fiction-paperback">Paperback Trade Fiction</option>
-          </Select >
-          
-          <ModalProvider>
-            <ContentWrapper>
-              {result.status === 'loaded' && result.payload.results.books.map(idx => (
-              <ImageContainer key={idx.rank}>
-                <Books rank={idx.rank} title={idx.title} author={idx.author} book_image={idx.book_image} description={idx.description} book_review_link={idx.book_review_link}/>
-              </ImageContainer>
-            ))}
-            </ContentWrapper>
-          </ModalProvider>
-        </Container>
-      </MainContainer>
+      <PageContainer>
+          <Nav>
+            <NavHeader>
+              <NavLeft></NavLeft>
+              <NavCenter>NY Times Bestsellers</NavCenter>
+              <NavRight></NavRight>
+            </NavHeader>
+          </Nav>
+          <MainContainer>
+              <Select value={book} onChange={( e: React.ChangeEvent<HTMLSelectElement>, ): void => setBooks(e.target.value)} >
+                <option value="hardcover-nonfiction">Non-Fiction</option>
+                <option value="combined-print-and-e-book-nonfiction">Combined Print and E-Book Non-Fiction</option>
+                <option value="paperback-nonfiction">Paperback Non-Fiction</option>
+                <option value="advice-how-to-and-miscellaneous">Advice, How-to & Misc.</option>
+              </Select>
+              <Select value={book} onChange={( e: React.ChangeEvent<HTMLSelectElement>, ): void => setBooks(e.target.value)}>
+                <option value="hardcover-fiction">Fiction</option>
+                <option value="combined-print-and-e-book-fiction">Combined Print and E-Book Fiction</option>
+                <option value="trade-fiction-paperback">Paperback Trade Fiction</option>
+              </Select >
+              <Select value={book} onChange={( e: React.ChangeEvent<HTMLSelectElement>, ): void => setBooks(e.target.value)}>
+                <option value="childrens-middle-grade-hardcover">Children's</option>
+                <option value="picture-books">Children's Picture Books</option>
+                <option value="series-books">Children's Series</option>
+                <option value="young-adult-hardcover">Young Adult Hardcover</option>
+              </Select >
+              <ModalProvider>
+                <ContentWrapper>
+                  {result.status === 'loaded' && result.payload.results.books.map(idx => (
+                  <ImageContainer key={idx.rank}>
+                    <Books rank={idx.rank} title={idx.title} author={idx.author} book_image={idx.book_image} description={idx.description} book_review_link={idx.book_review_link}/>
+                  </ImageContainer>
+                ))}
+                </ContentWrapper>
+              </ModalProvider>
+          </MainContainer>
+        <Footer/>
+      </PageContainer>
     </Fragment>
   );
 }
@@ -111,19 +115,14 @@ const Books: React.FC<IBooks> = ({rank, title, author, book_image, description, 
                     <ModalSubHeader>NY Times Rank No. {rank}</ModalSubHeader>
                     <ModalText>{description}</ModalText>
                     <ModalText><a href={book_review_link} target="_blank" rel="noopener noreferrer" >Review</a></ModalText>
-
                   </ModalContent>
-                 
                 </Column>
               </Row>
-             
-              
               <Line/>
             </ModalContainer>
           </ModalWrapper>
         </Modal>}
     </>
-    
   )
 }
 export default App;
